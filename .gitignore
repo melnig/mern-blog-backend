@@ -3,3 +3,6 @@ mern-blog-frontend/
 
 # Ігнорувати залежності Node.js
 node_modules/
+
+# Ігнорувати env
+.env

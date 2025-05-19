@@ -2,6 +2,7 @@ import express from "express"; // Імпортуємо Express — фреймв�
 import mongoose from "mongoose"; // Підключаємо mongoose — ORM для MongoDB (робота з базою як з об’єктами)
 import multer from "multer";
 import cors from "cors";
+import dotenv from "dotenv";
 // Імпортуємо набір правил для валідації полів реєстрації
 import {
   registerValidator,
@@ -12,9 +13,11 @@ import {
 import { handleValidationErrors, checkAuth } from "./utils/index.js";
 import { UserController, PostController } from "./controllers/index.js";
 
+dotenv.config();
+
 // Підключення до MongoDB через mongoose
 mongoose
-  .connect("mongodb+srv://admin:Melya0206@cluster0.2irhueo.mongodb.net/blog") // 🔐 URI до MongoDB Atlas
+  .connect(process.env.MONGODB_URI) // 🔐 URI до MongoDB Atlas
   .then(() => console.log("DB ok!")) // Якщо з'єднання успішне — лог
   .catch((err) => console.log("DB error", err)); // Якщо помилка — лог помилки
 
