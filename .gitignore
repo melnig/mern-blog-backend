@@ -1,0 +1,5 @@
+# Ігнорувати фронтенд-папку
+mern-blog-frontend/
+
+# Ігнорувати залежності Node.js
+node_modules/
