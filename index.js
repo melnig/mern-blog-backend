@@ -34,7 +34,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-const FRONTEND_URL = "https://mern-blog-frontend-omega.vercel.app/";
+const FRONTEND_URL = "https://mern-blog-frontend-omega.vercel.app";
 
 app.use(express.json()); // Додаємо middleware, щоб Express міг читати JSON з тіла запитів
 app.use("/uploads", express.static("uploads"));
